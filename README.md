@@ -31,7 +31,7 @@ The only way to test listeners is to use `Verify***Listener` classes to debug if
 
 - add gradle dependency  
 ```groovy
-testCompile('com.jamf:testrail-reporting:0.0.1-SNAPSHOT')
+testCompile('com.electriccloud.plugins.spec.reporttestrail:testrail-reporting:0.0.1-SNAPSHOT')
 ```
 
 - add `@ReportResults` annotation
