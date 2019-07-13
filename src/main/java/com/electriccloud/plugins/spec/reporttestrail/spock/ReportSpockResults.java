@@ -1,4 +1,4 @@
-package com.jamf.reporting.spock;
+package com.electriccloud.plugins.spec.reporttestrail.spock;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

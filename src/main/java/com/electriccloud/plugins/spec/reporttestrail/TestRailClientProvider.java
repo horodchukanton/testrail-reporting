@@ -1,4 +1,4 @@
-package com.jamf.reporting;
+package com.electriccloud.plugins.spec.reporttestrail;
 
 import com.codepine.api.testrail.TestRail;
 import org.slf4j.Logger;

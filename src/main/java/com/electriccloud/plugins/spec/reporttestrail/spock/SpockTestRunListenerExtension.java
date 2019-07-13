@@ -1,4 +1,4 @@
-package com.jamf.reporting.spock;
+package com.electriccloud.plugins.spec.reporttestrail.spock;
 
 import org.spockframework.runtime.extension.AbstractAnnotationDrivenExtension;
 import org.spockframework.runtime.model.SpecInfo;

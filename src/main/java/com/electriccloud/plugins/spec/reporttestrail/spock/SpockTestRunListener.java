@@ -1,8 +1,10 @@
-package com.jamf.reporting.spock;
+package com.electriccloud.plugins.spec.reporttestrail.spock;
 
 import static org.spockframework.runtime.model.MethodKind.FEATURE_EXECUTION;
 import static org.spockframework.runtime.model.MethodKind.SPEC_EXECUTION;
 
+import com.electriccloud.plugins.spec.reporttestrail.ReportService;
+import com.electriccloud.plugins.spec.reporttestrail.ReportServiceProvider;
 import org.spockframework.runtime.AbstractRunListener;
 import org.spockframework.runtime.ConditionFailedWithExceptionError;
 import org.spockframework.runtime.model.ErrorInfo;
@@ -10,9 +12,6 @@ import org.spockframework.runtime.model.FeatureInfo;
 import org.spockframework.runtime.model.IterationInfo;
 import org.spockframework.runtime.model.MethodInfo;
 import org.spockframework.runtime.model.NodeInfo;
-
-import com.jamf.reporting.ReportService;
-import com.jamf.reporting.ReportServiceProvider;
 
 /**
  * Listener which allows for plugging custom behaviours on various test lifecycle events. If test fails, first <p>error</p> method is invoked, and afterwards ALWAYS <p>afterIteration</p> is invoked

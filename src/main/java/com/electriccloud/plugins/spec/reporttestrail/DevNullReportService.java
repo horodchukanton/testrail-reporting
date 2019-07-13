@@ -1,4 +1,4 @@
-package com.jamf.reporting;
+package com.electriccloud.plugins.spec.reporttestrail;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

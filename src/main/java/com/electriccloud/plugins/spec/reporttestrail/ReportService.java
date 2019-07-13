@@ -1,4 +1,4 @@
-package com.jamf.reporting;
+package com.electriccloud.plugins.spec.reporttestrail;
 
 public interface ReportService {
 

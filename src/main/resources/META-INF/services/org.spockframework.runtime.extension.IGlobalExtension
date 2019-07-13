@@ -1,2 +1,2 @@
-com.jamf.reporting.spock.SpockGlobalExtension
+com.electriccloud.plugins.spec.reporttestrail.spock.SpockGlobalExtension
 #This way we tell spock to use custom global extension

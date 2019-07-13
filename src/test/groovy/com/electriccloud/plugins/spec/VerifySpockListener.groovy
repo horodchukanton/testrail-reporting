@@ -1,13 +1,27 @@
-package com.jamf.now.qa.reporting
+package com.electriccloud.plugins.spec
 
 import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Unroll
 
-import com.jamf.reporting.spock.ReportSpockResults
+import com.electriccloud.plugins.spec.reporttestrail.spock.ReportSpockResults
 
 @ReportSpockResults
 class VerifySpockListener extends Specification {
+
+  void "existing" (){
+    when: 'first step'
+    println "log"
+
+    then:
+    def testParam = '1'
+
+    expect: 'second step'
+    arg == testParam
+
+    where:
+    arg << ['1']
+  }
 
   void "success"() {
     when:

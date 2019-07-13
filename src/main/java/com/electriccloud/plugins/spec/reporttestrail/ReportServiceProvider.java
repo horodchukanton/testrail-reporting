@@ -1,4 +1,4 @@
-package com.jamf.reporting;
+package com.electriccloud.plugins.spec.reporttestrail;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +30,7 @@ public class ReportServiceProvider {
   }
 
   /**
-   * Determines if we should send results to Test Rail or not. We should only send results if <p>tool.testrail.send</p> is true and <p>tool.testrail.run_name</p> is not empty.
+   * Determines if we should send results to Test Rail or not. We should only send results if <p>TESTRAIL_SEND</p> is 'true' and <p>tool.testrail.run_name</p> is not empty.
    */
   private static boolean shouldSendResults() {
     if (properties.isSend() && properties.getRunName().isEmpty()) {
