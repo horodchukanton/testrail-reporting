@@ -8,7 +8,7 @@ import spock.lang.Unroll
 import com.electriccloud.plugins.spec.reporttestrail.spock.ReportSpockResults
 
 @ReportSpockResults
-@IgnoreIf({ System.getenv("TESTRAIL_RUN_TESTS") == 'true' })
+@IgnoreIf({ System.getenv("TESTRAIL_RUN_TESTS") != 'true' })
 class VerifySpockListener extends Specification {
 
   void "existing" (){
