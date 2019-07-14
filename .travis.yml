@@ -1,11 +1,20 @@
 language: java
 
+before_deploy:
+  - git config --local user.name "abstract travis user"
+  - git config --local user.email "travis-ci@github.com"
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
 deploy:
   provider: releases
+  prerelease: true
+  overwrite: true
   api_key:
     secure: gFyXj3DH0u8OWUP8ydHS9D/2llw9pKfAPuOmy+8/ae4lpZHR7ErVcTvrU1u5DQgegOVYbsFQv41yiYabY7BoJ84UT99iXwY7Tx/D19dx/S8+cAowqGb8Kg/ObtbErtGh7nLlkvaLHGVb+A8Tjr8pAMXgFR30SJe4T/RD+73WqNV4Zx9wG1ioKs+QCOqExDymxYjCMpYnAEsPWVcZz2VdQDoTK8ltLgUPTUbFFkpS9zujMsWfy1Jk+faZG1fzZpax4wkcPm01PhvITyIMYx14wVqE0AMJtTLNUl/hiQkH3CugrXqHOgea3c5wvP7FWEEmAc82FOkHbq4PJf4wH9OhXq1jhfDDM9sFya+S/uLOVQUnCrAq+tF93dKiGVWb/VFwDNWXfFb1+V3GismflKRUmeVoNbaoMyRjoToVlxIue2H0l8D/liCf2lBFbu6fux+7SJ5rYPEacoe1e3blA+6IafFet8XjmgrhycyoYXioRc3S4Ze3GnBxj3UMIcBi/4Ugfr8ERrDh3W2l5VZjnHEvlFi8DilwDS1QP5/A1iKYubvA1mkp5jfcjN/DhCcVA8/JxlBgU8SVZbEKyEFF/S6Qhc63Es+zchoRW4zSlpvD1KRBkIlkRqLVHH19ltOhF3K8JL/1meXvi2dxaL4kescxZzQpDBeBoN/6U7DtXIrx8jk=
-  file: "disk-filltest"
+  file: build/libs/*
+  file_glob: true
   skip_cleanup: true
+  draft: true
   on:
     repo: horodchukanton/testrail-reporting
-    tags: true
+    on.tags: true
