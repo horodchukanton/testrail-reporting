@@ -1,13 +1,14 @@
 package com.electriccloud.plugins.spec
 
 import spock.lang.Ignore
+import spock.lang.IgnoreIf
 import spock.lang.Specification
 import spock.lang.Unroll
 
 import com.electriccloud.plugins.spec.reporttestrail.spock.ReportSpockResults
 
 @ReportSpockResults
-@Ignore
+@IgnoreIf({ System.getenv("TESTRAIL_RUN_TESTS") == 'true' })
 class VerifySpockListener extends Specification {
 
   void "existing" (){
