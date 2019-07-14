@@ -1,3 +1,5 @@
+![](https://travis-ci.org/horodchukanton/testrail-reporting.svg?branch=master)
+
 # Overview
 
 Testrail-reporting is a library that provides a common and simplified way of sending results to [TestRail](https://www.gurock.com/testrail).  
