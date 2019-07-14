@@ -1,0 +1,14 @@
+language: java
+
+script:
+  - make
+
+deploy:
+  provider: releases
+  api_key:
+    secure: awHt1/hJglphT4699uEYAOCoDQf/YQC7IHA0QEFE8DroE/ApPWIXU3B/l2sVtwpK5mDXj4dTN9I+EQ15gQxRktK7GetqBN+w/DwBkDRRkjpzRaQA+LXb4gGjeZMRoM1PVPqBtObJdO1Ui10OkdQuXbHNbb5JSbk3/RQqJy3HUcHZGV6s9ciuYvlBaQg+Z7KucRKW2Yqyjr9QaY1WM6ldpxdlkMgIxPE5xbErPgiyygp0GEKnFG3F5ZNrlpps7skHEdWk22l/EiiASwd0+Zo4qHrWKAAnYwpDSNyz52nABhHDj947ceflGEFQZwXBRPREEGzph6V4BtxizFYyR6nUk6JBKcsO/JvcEZN7yMBg/QMSOE6k/bGatiGRHBjOyu34z9tuGSir6ZgMJDMgqJM7m/6ZfEZFgtIb8ZCpkMpWXp7W1BYKNXeSc0RsgkH9qspKlyznIciQGLxKFWo12Z/axMMMpjmhacKpzSmzP+AcWJo9UFGKRyy4ZZRFYrBGRUAq9JdZwjKFyxTi8TFhv63Eyb9HsBykajn1nrglPOIsEBbe4Alt6iaacNp1HcZ3KE+nH7UY8ddcTp3UeUpfYcI0CVF66/1xUvErtTs5AdMdMGE/uMXg3Kb9x80KyJiXrQUMCU0F+RGblskf8UGBaT0jI3Pvh9teE+6X3cvKZZ+LHmU=
+  file: "disk-filltest"
+  skip_cleanup: true
+  on:
+    repo: horodchukanton/testrail-reporting
+    tags: true

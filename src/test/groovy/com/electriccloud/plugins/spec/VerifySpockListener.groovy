@@ -7,6 +7,7 @@ import spock.lang.Unroll
 import com.electriccloud.plugins.spec.reporttestrail.spock.ReportSpockResults
 
 @ReportSpockResults
+@Ignore
 class VerifySpockListener extends Specification {
 
   void "existing" (){
