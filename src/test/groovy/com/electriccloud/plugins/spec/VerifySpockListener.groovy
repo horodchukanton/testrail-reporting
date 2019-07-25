@@ -15,13 +15,13 @@ class VerifySpockListener extends Specification {
     when: 'first step'
     println "log"
 
-    then:
+    then: 'first then'
     def testParam = '1'
 
     expect: 'second step'
     arg == testParam
 
-    where:
+    where: 'last where'
     arg << ['1']
   }
 

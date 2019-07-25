@@ -5,13 +5,10 @@ import static org.spockframework.runtime.model.MethodKind.SPEC_EXECUTION;
 
 import com.electriccloud.plugins.spec.reporttestrail.ReportService;
 import com.electriccloud.plugins.spec.reporttestrail.ReportServiceProvider;
+import org.spockframework.compiler.model.Block;
 import org.spockframework.runtime.AbstractRunListener;
 import org.spockframework.runtime.ConditionFailedWithExceptionError;
-import org.spockframework.runtime.model.ErrorInfo;
-import org.spockframework.runtime.model.FeatureInfo;
-import org.spockframework.runtime.model.IterationInfo;
-import org.spockframework.runtime.model.MethodInfo;
-import org.spockframework.runtime.model.NodeInfo;
+import org.spockframework.runtime.model.*;
 
 /**
  * Listener which allows for plugging custom behaviours on various test lifecycle events. If test fails, first <p>error</p> method is invoked, and afterwards ALWAYS <p>afterIteration</p> is invoked
@@ -23,6 +20,17 @@ public class SpockTestRunListener extends AbstractRunListener {
 
   SpockTestRunListener() {
     this.reportService = ReportServiceProvider.getReportService();
+  }
+
+  @Override
+  public void afterFeature(FeatureInfo feature) {
+    for (BlockInfo block : feature.getBlocks()) {
+      for (String text : block.getTexts()) {
+        System.out.println(block.getKind().name() + ":" + text);
+//        println "${block.kind.name().toLowerCase()} $text"
+      }
+    }
+
   }
 
   @Override
